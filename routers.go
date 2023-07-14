@@ -12,4 +12,5 @@ func (apiCfg *apiConfig) Route (router *chi.Mux) {
 	router.Get("/feeds_follows", apiCfg.middlewareAuth(apiCfg.handlerGetFeedFollow))
 	router.Post("/feeds_follows", apiCfg.middlewareAuth(apiCfg.handlerCreateFeedFollow))
 	router.Delete("/feeds_follows/{feedFollowId}", apiCfg.middlewareAuth(apiCfg.handlerDeleteFeedFollow))
+	router.Get("/posts", apiCfg.middlewareAuth(apiCfg.handlerGetUserFeedPosts))
 }
